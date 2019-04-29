@@ -15,6 +15,7 @@ fetch(url)
     for (let i = 0; i < data.enscape.length; i++) {
       let dateYear = moment(data.enscape[i].date, 'YYYY-MMMM').format('YYYY');
       let dateMonth = moment(data.enscape[i].date, 'YYYY-MMMM').format('MMMM YYYY');
+      let event = data.enscape[i].text;
 
       if (dateYear !== helperDate) {
         helperDate = dateYear;
@@ -47,5 +48,12 @@ fetch(url)
 
       let monthCount = count - 1;
       monthList[monthCount].appendChild(li);
+
+      //Creates the month event detail/description
+      let p = document.createElement("p");
+      p.className = "event-description";
+      p.appendChild(document.createTextNode(event));
+
+      li.appendChild(p);
     }
   });
