@@ -1,4 +1,4 @@
-//let url = 'https://confidenceiskey.github.io/test10/enscape.json';
+let url = 'https://confidenceiskey.github.io/test10/enscape.json';
 
 fetch(url)
   .then( res => res.json())
